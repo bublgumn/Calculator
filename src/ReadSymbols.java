@@ -72,7 +72,9 @@ public class ReadSymbols {
         mapArabsFromRims.put(8, "VIII");
         mapArabsFromRims.put(9, "IX");
         mapArabsFromRims.put(10, "X");
+        mapArabsFromRims.put(90, "XC");
+        mapArabsFromRims.put(50, "L");
+        mapArabsFromRims.put(40, "XL");
         mapArabsFromRims.put(100, "C");
     }
-
 }

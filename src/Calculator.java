@@ -47,17 +47,41 @@ public class Calculator {
                             ReadSymbols.getMapRims().get(symbolConsol.get(1).trim());
                 }
                 if (result > 10) {
-                    Integer value = result % 10;
-                    result -= value;
-                    if (value > 0) {
-                        this.result = ReadSymbols.getMapArabsFromRims().get(result) + ReadSymbols.getMapArabsFromRims().get(value);
-                    }
-                    else this.result = ReadSymbols.getMapArabsFromRims().get(result);
+                    this.result = rimsNumber(result);
                 } else this.result = ReadSymbols.getMapArabsFromRims().get(result);
-
             }
         } else throw new ExceptionPr();
     }
+
+    private String rimsNumber (Integer arabsNumber) {
+        String result = "";
+        if (arabsNumber <= 39) {
+            int sediment = arabsNumber % 10;
+            int tens = (arabsNumber - (sediment)) / 10;
+            for (int i = 0; i < tens; i++) {
+                result = result + ReadSymbols.getMapArabsFromRims().get(10);
+            }
+            if (sediment != 0)result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+        } else if (arabsNumber > 39 && arabsNumber <= 49) {
+            result = result + ReadSymbols.getMapArabsFromRims().get(40);
+            int sediment = arabsNumber % 10;
+            result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+        } else if (arabsNumber > 49 && arabsNumber <= 89) {
+            result = result + ReadSymbols.getMapArabsFromRims().get(50);
+            int sediment = arabsNumber % 10;
+            int tens = (arabsNumber - (sediment) - 50) / 10;
+            for (int i = 0; i < tens; i++) {
+                result = result + ReadSymbols.getMapArabsFromRims().get(10);
+            }
+            if (sediment != 0)result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+        } else if (arabsNumber > 89 && arabsNumber <= 101) {
+            result = result + ReadSymbols.getMapArabsFromRims().get(90);
+            int sediment = arabsNumber % 10;
+            result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+        }
+        return result;
+    }
+
     public String getResult() {
         return result;
     }
