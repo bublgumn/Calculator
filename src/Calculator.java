@@ -65,7 +65,7 @@ public class Calculator {
         } else if (arabsNumber > 39 && arabsNumber <= 49) {
             result = result + ReadSymbols.getMapArabsFromRims().get(40);
             int sediment = arabsNumber % 10;
-            result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+            if (sediment != 0)result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
         } else if (arabsNumber > 49 && arabsNumber <= 89) {
             result = result + ReadSymbols.getMapArabsFromRims().get(50);
             int sediment = arabsNumber % 10;
@@ -77,7 +77,7 @@ public class Calculator {
         } else if (arabsNumber > 89 && arabsNumber <= 101) {
             result = result + ReadSymbols.getMapArabsFromRims().get(90);
             int sediment = arabsNumber % 10;
-            result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
+            if (sediment != 0)result = result + ReadSymbols.getMapArabsFromRims().get(sediment);
         }
         return result;
     }

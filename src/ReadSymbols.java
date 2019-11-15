@@ -61,7 +61,7 @@ public class ReadSymbols {
         mapArabs.put("9", 9);
         mapArabs.put("10", 10);
 
-        //из Аимский в Арабские
+        //из Арабские из Римских
         mapArabsFromRims.put(1, "I");
         mapArabsFromRims.put(2, "II");
         mapArabsFromRims.put(3, "III");
