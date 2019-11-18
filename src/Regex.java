@@ -11,9 +11,9 @@ public class Regex {
         return symbolConsol;
     }
     private void separation(ReadSymbols readSymbols) throws ExceptionPr {
-        String[] array = readSymbols.getConsol().split("[+,-,*,/]{1}");
+        String[] array = readSymbols.getConsol().split("[+,\\-,*,/]{1}");
         if (array.length == 1) throw new ExceptionPr();
-        Pattern paternNoNumber = Pattern.compile("[+,-,*,/]{1}");
+        Pattern paternNoNumber = Pattern.compile("[+,\\-,*,/]{1}");
         Matcher matcherNoNumber = paternNoNumber.matcher(readSymbols.getConsol());
         for (int i = 0; i < array.length; i++) {
             this.symbolConsol.add(array[i].trim());

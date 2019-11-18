@@ -1,17 +1,20 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class ReadSymbols {
 
     private static TreeMap<String, Integer> mapRims = new TreeMap<>();
     private static TreeMap<String, Integer> mapArabs = new TreeMap<>();
-    private static TreeMap<Integer, String> mapArabsFromRims = new TreeMap<>();
+    private static TreeMap<Integer, String> mapArabsInRims = new TreeMap<>();
     private String consol;
 
     public ReadSymbols() {
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            //consol = reader.nextLine();
+            //Scanner reader = new Scanner(System.in);
             consol = reader.readLine();
             reader.close();
         }
@@ -32,8 +35,8 @@ public class ReadSymbols {
         return consol;
     }
 
-    public static TreeMap<Integer, String> getMapArabsFromRims() {
-        return mapArabsFromRims;
+    public static TreeMap<Integer, String> getMapArabsInRims() {
+        return mapArabsInRims;
     }
 
     static {
@@ -61,20 +64,20 @@ public class ReadSymbols {
         mapArabs.put("9", 9);
         mapArabs.put("10", 10);
 
-        //из Арабские из Римских
-        mapArabsFromRims.put(1, "I");
-        mapArabsFromRims.put(2, "II");
-        mapArabsFromRims.put(3, "III");
-        mapArabsFromRims.put(4, "IV");
-        mapArabsFromRims.put(5, "V");
-        mapArabsFromRims.put(6, "VI");
-        mapArabsFromRims.put(7, "VII");
-        mapArabsFromRims.put(8, "VIII");
-        mapArabsFromRims.put(9, "IX");
-        mapArabsFromRims.put(10, "X");
-        mapArabsFromRims.put(90, "XC");
-        mapArabsFromRims.put(50, "L");
-        mapArabsFromRims.put(40, "XL");
-        mapArabsFromRims.put(100, "C");
+        //из Арабских в Римские
+        mapArabsInRims.put(1, "I");
+        mapArabsInRims.put(2, "II");
+        mapArabsInRims.put(3, "III");
+        mapArabsInRims.put(4, "IV");
+        mapArabsInRims.put(5, "V");
+        mapArabsInRims.put(6, "VI");
+        mapArabsInRims.put(7, "VII");
+        mapArabsInRims.put(8, "VIII");
+        mapArabsInRims.put(9, "IX");
+        mapArabsInRims.put(10, "X");
+        mapArabsInRims.put(90, "XC");
+        mapArabsInRims.put(50, "L");
+        mapArabsInRims.put(40, "XL");
+        mapArabsInRims.put(100, "C");
     }
 }
